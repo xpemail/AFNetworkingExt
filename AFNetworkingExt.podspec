@@ -24,9 +24,9 @@ Pod::Spec.new do |s|
     
     ds.source_files = 'Ext/*.{h,m,mm}'  
   
-    ds.dependency 'AFNetworking+Ext/AFCustomRequestOperation'
-    ds.dependency 'AFNetworking+Ext/AFDownloadRequestOperation'
-    ds.dependency 'AFNetworking+Ext/AFTextResponseSerializer'
+    ds.dependency 'AFNetworkingExt/AFCustomRequestOperation'
+    ds.dependency 'AFNetworkingExt/AFDownloadRequestOperation'
+    ds.dependency 'AFNetworkingExt/AFTextResponseSerializer'
     		 
   end 
   
@@ -40,7 +40,7 @@ Pod::Spec.new do |s|
   
   s.subspec 'AFDownloadRequestOperation' do |ds|
     
-    ds.dependency 'AFNetworking+Ext/AFCustomRequestOperation'
+    ds.dependency 'AFNetworkingExt/AFCustomRequestOperation'
     ds.source_files = 'AFDownloadRequestOperation/*.{h,m,mm}'  
   end
   
@@ -54,7 +54,7 @@ Pod::Spec.new do |s|
   
   s.subspec 'example' do |ds|
     
-    ds.dependency 'AFNetworking+Ext/Base'
+    ds.dependency 'AFNetworkingExt/Base'
     ds.source_files = '*.{h,m,mm}' 
     		 
   end
@@ -64,8 +64,8 @@ Pod::Spec.new do |s|
      
      ks.subspec 'UIImageView+DYLoading' do |ds|
      
-     	ds.dependency 'AFNetworking+Ext/AFDownloadRequestOperation'
-        ds.dependency 'AFNetworking+Ext/Base' 
+     	ds.dependency 'AFNetworkingExt/AFDownloadRequestOperation'
+        ds.dependency 'AFNetworkingExt/Base' 
     
      	ds.source_files = 'UIKit/UIImageView+DYLoading/*.{h,m,mm}' 
     		 
