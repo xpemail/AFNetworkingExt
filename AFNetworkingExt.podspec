@@ -2,7 +2,7 @@
 Pod::Spec.new do |s|
  
 
-  s.name         = "AFNetworking+Ext"
+  s.name         = "AFNetworkingExt"
   s.version      = "1.0"
   s.summary      = "AFNetworking的封装, 并提供一个 UIImageView+DYLoading  cache in fileSystem+memory"
  
