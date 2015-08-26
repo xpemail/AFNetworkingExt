@@ -8,12 +8,12 @@
 Podfile
 如果无法编译，指定下面依赖版本
 	
-	pod 'AFNetworking', '~> 2.3.1'
-	pod 'AFNetworkActivityLogger', '~> 2.0.3'
-	pod 'AFOnoResponseSerializer', '~> 1.0.0'
-	pod 'AFgzipRequestSerializer', '~> 0.0.1'
-	pod 'Ono', '~> 1.1.1'
-	pod 'Godzippa', '~> 1.0.0'
+	pod 'AFNetworking', '2.5.3'
+	pod 'AFNetworkActivityLogger', '2.0.4'
+	pod 'AFOnoResponseSerializer', '1.0.0'
+	pod 'AFgzipRequestSerializer', '0.0.2'
+	pod 'Ono', '1.2.1'
+	pod 'Godzippa', '1.1.0'
 
 创建
 
@@ -32,6 +32,9 @@ Podfile
         	self.responseType =ResponseProtocolTypeFile; //文件下载
         	self.responseType =ResponseProtocolTypeJSON; //返回JSON
         	self.responseType =ResponseProtocolTypeNormal; //返回普通文本
+        	
+        	self.requestType =RequestProtocolTypeNormal; //默认请求
+        	self.requestType =RequestProtocolTypeJSON; //JSON body 请求 
         
     	}
    	 	return self;
@@ -79,7 +82,7 @@ Podfile
 
 	}];
 
-	[request completionBlock:^(AFNetworkingBaseRequest *request, NSInteger statusCode) {
+	[request finishedBlock:^(AFNetworkingBaseRequest *request, StatusCode errorCode, NSInteger httpStatusCode) {
     NSLog(@"-----------completionBlock");
 	}];
 
@@ -107,8 +110,8 @@ UIImageView+DYLoading:缓存图片到本地文件系统，并且出现相同下�
 	
 	
     self.imageView.defaultLoadingImage = [UIImage imageNamed:@"icon"]; 
-    imageView.loadingImagePathType = @"icon"; 
-    imageView.loadingImagePathKey = [NSString stringWithFormat:@"%lld", user.uid]; 
+    //imageView.loadingImagePathType = @"icon"; 
+    //imageView.loadingImagePathKey = [NSString stringWithFormat:@"%lld", user.uid]; 
     imageView.loadingQueueId = queueId;
     
     [imageView loadingAsyncImage:imagePath];
