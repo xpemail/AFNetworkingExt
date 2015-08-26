@@ -145,6 +145,7 @@ static int indexNumber =0;
 
 -(AFCustomRequestOperationManager *)getManager{
     AFCustomRequestOperationManager *manager;
+    
     if(self.queueExecute){
         
          manager = [AFNetworkHttpRequestManager loadManagerStr:self.managerKey responseType:self.responseType asyncwork:self.asyncwork];
@@ -154,7 +155,7 @@ static int indexNumber =0;
         manager =[AFNetworkHttpRequestManager getAFHTTPRequestOperationManager:self.responseType];
         
     }
-    
+    manager.timeoutInterval=self.timeoutInterval;//add time out setting by xd.5
     return manager;
 }
 

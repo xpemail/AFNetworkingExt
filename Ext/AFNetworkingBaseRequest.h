@@ -50,7 +50,7 @@ typedef void(^AFNetworkingUploadBlock)(long long  totalBytesWritten, long long t
 }
 @property (nonatomic,assign,readonly) NSInteger requestId;
 @property (nonatomic,strong,readonly) NSString *managerKey;
-
+@property (nonatomic)int timeoutInterval;//add time out setting by xd.5
 @property (nonatomic,assign) ResponseProtocolType responseType;  //响应协议类型
 @property (nonatomic,assign) RequestProtocolType  requestType  NS_AVAILABLE_IOS(5_0);  //请求协议类型
  

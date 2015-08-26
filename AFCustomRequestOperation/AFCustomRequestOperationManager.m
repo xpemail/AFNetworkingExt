@@ -106,6 +106,10 @@ static dispatch_queue_t request_operation_completion_queue() {
                            failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure
 {
     NSMutableURLRequest *request = [self.requestSerializer requestWithMethod:method URLString:[[NSURL URLWithString:URLString relativeToURL:self.baseURL] absoluteString] parameters:parameters error:nil];
+    //add timeout setting by xd.5
+    if (self.timeoutInterval>0) {
+        [request setTimeoutInterval:self.timeoutInterval];
+    }
     
     return  [self executeRequest:request delegate:delegate  success:success failure:failure];
 }
@@ -118,6 +122,10 @@ static dispatch_queue_t request_operation_completion_queue() {
                          failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure
 {
     NSMutableURLRequest *request = [self.requestSerializer requestWithMethod:method URLString:[[NSURL URLWithString:URLString relativeToURL:self.baseURL] absoluteString] parameters:nil error:nil];
+    //add timeout setting by xd.5
+    if (self.timeoutInterval>0) {
+        [request setTimeoutInterval:self.timeoutInterval];
+    }
     
     NSString *msgLength = [NSString stringWithFormat:@"%d", (int)[body length]];
     
@@ -137,6 +145,10 @@ static dispatch_queue_t request_operation_completion_queue() {
                          failure:(void (^)(AFHTTPRequestOperation *operation, NSError *error))failure
 {
     NSMutableURLRequest *request = [self.requestSerializer multipartFormRequestWithMethod:method URLString:[[NSURL URLWithString:URLString relativeToURL:self.baseURL] absoluteString] parameters:parameters constructingBodyWithBlock:block error:nil];
+    //add timeout setting by xd.5
+    if (self.timeoutInterval>0) {
+        [request setTimeoutInterval:self.timeoutInterval];
+    }
     
     return  [self executeRequest:request delegate:delegate  success:success failure:failure];
 }

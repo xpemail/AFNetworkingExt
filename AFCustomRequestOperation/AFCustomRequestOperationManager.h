@@ -37,7 +37,7 @@ static NSString *const kAFNetworking_HTTP_MOVE = @"MOVE";
 @interface AFCustomRequestOperationManager : AFHTTPRequestOperationManager
 
 @property (nonatomic,assign) BOOL asyncwork;
- 
+@property (nonatomic)int timeoutInterval; //add time out setting by xd.5
 
 - (AFHTTPRequestOperation *)request:(NSString *)URLString
                              method:(NSString *)method
