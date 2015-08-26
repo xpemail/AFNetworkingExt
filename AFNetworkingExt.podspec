@@ -16,7 +16,7 @@ Pod::Spec.new do |s|
 
   s.ios.framework = 'UIKit'
  
-  s.source = { :git => 'https://github.com/xpemail/AFNetworkingExt.git' , :tag => '1.0'} 
+  s.source = { :git => 'https://github.com/xpemail/AFNetworkingExt.git' , :tag => '1.2.1'} 
  
   s.requires_arc = true
   
