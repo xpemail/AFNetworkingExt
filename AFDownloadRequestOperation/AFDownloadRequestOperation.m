@@ -268,6 +268,15 @@ typedef void (^AFURLConnectionProgressiveOperationProgressBlock)(AFDownloadReque
     }
 }
 
+- (NSString *)tempPath {
+    NSString *tempPath = nil;
+    if (self.request.URL) {
+        NSString *md5URLString = [[self class] md5StringForString:[NSString stringWithFormat:@"%@",self.request.URL]];
+        tempPath = [[[self class] cacheFolder] stringByAppendingPathComponent:md5URLString];
+    }
+    return tempPath;
+}
+
 #pragma mark - Static
 
 + (NSString *)cacheFolder {
