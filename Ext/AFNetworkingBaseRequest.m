@@ -314,7 +314,7 @@ static int indexNumber =0;
         responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html",@"text/xml", @"application/xml",@"application/x-gzip",@"text/webviewhtml", nil];
     }else{ 
         responseSerializer= [AFJSONResponseSerializer serializer];
-        responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/html",@"application/json",@"text/xml", @"application/xml",@"application/x-gzip", nil];
+        responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"text/plain",@"text/html",@"application/json",@"text/xml", @"application/xml",@"application/x-gzip", nil];//增加text/plain支持 xd.5 20150910 __
     }
     
     
