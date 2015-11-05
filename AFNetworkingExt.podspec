@@ -73,7 +73,7 @@ Pod::Spec.new do |s|
     		 
   end 
   
-  s.dependency 'AFNetworking'
+  s.dependency 'AFNetworking', "~> 2.5.4"
   s.dependency 'AFNetworkActivityLogger'
   s.dependency 'AFgzipRequestSerializer'
   s.dependency 'AFOnoResponseSerializer'
