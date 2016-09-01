@@ -38,6 +38,7 @@ static NSString *const kAFNetworking_HTTP_MOVE = @"MOVE";
 
 @property (nonatomic,assign) BOOL asyncwork;
 @property (nonatomic)int timeoutInterval; //add time out setting by xd.5
+@property (nonatomic,strong) NSDictionary *dicHeaders;//add header by xd.5
 
 - (AFHTTPRequestOperation *)request:(NSString *)URLString
                              method:(NSString *)method

@@ -46,6 +46,14 @@ static int indexNumber =0;
         self.queueExecute = YES;
         indexNumber++;
         self.requestId=indexNumber;
+        //add timeout by xd.5
+        self.timeoutInterval = 30;
+        //add header test:::::: xd.5
+//        NSMutableDictionary *headers = [[NSMutableDictionary alloc] init];
+//        [headers setObject:@"pscc.wopaitv.com/blive/wxdtest1.flv" forKey:@"SOOONER_URL"];
+//        [headers setObject:@"3" forKey:@"SOOONER_URL_TYPE"];
+//        [headers setObject:@"42.62.102.242:8801" forKey:@"Host"];
+//        self.dicHeaders = headers;
     }
     return self;
 }
@@ -156,6 +164,7 @@ static int indexNumber =0;
         
     }
     manager.timeoutInterval=self.timeoutInterval;//add time out setting by xd.5
+    manager.dicHeaders=self.dicHeaders;//add headers by xd.5
     return manager;
 }
 
